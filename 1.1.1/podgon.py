@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 #функция для подгонки
-linear = lambda x,a,b:a*x+b
+linear = lambda x,a: a*x
 x=np.linspace(0,500,500)
 
 #Данные
@@ -23,18 +23,18 @@ x3=l20vr = l20vd*4
 cfc1,pcov=curve_fit(linear,x1,y1)
 cfc2,pcov=curve_fit(linear,x2,y2)
 cfc3,pcov=curve_fit(linear,x3,y3)
-a1,b1=cfc1
-a2,b2=cfc2
-a3,b3=cfc3
+a1=cfc1
+a2=cfc2
+a3=cfc3
 
 #обычные графики
 plt.plot(l50vr,l50ma, marker='o',label='l=50см')
 plt.plot(l30vr,l30ma, marker='o',label='l=30см',color='purple')
 plt.plot(l20vr,l20ma, marker='o',label='l=20см')
 #подогнанные графики
-plt.plot(x,linear(x,a1,b1),color='red')
-plt.plot(x,linear(x,a2,b2),color='red')
-plt.plot(x,linear(x,a3,b3),color='red')
+plt.plot(x,linear(x,a1),color='red')
+plt.plot(x,linear(x,a2),color='red')
+plt.plot(x,linear(x,a3),color='red')
 
 plt.xlabel('V - напряжение в мВ')
 plt.ylabel('I - сила тока в мкА')
