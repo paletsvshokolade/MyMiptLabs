@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import numpy as np
 
 
@@ -21,4 +22,29 @@ r50,r30,r20=np.mean(R50),np.mean(R30),np.mean(R20)
 rpr= lambda v,i: v/i *(1+(v)/(i*4*10**6))
 rpr20,rpr30,rpr50=np.mean(rpr(u20,a20)),np.mean(rpr(u30,a30)),np.mean(rpr(u50,a50))
 print(r50,r30,r20)
+=======
+import numpy as np
+
+
+l50vd = np.array([58,110,98,80,69,49,42,35,56,76])
+a50 = np.array([46.57,87.72,78.44,64.12,55.51,39.572,34.028,28.307,44.746,60.65])
+u50 = l50vd*4
+
+l30vd = np.array([31,50,63,75,84,90,97,108,93,55])
+a30 = np.array([41.03,66.6,83.09,99.73,110.45,118.41,128.04,142.3,122.75,72.18])
+u30 = l30vd*4
+
+l20vd = np.array([38,40,47,52,57,63,68,72,60,48])
+a20 = np.array([75.8,79.74,93.77,103.6,112.8,125.46,134.34,141.92,119.09,96.02])
+u20 = l20vd*4
+
+R50=u50/a50
+R30=u30/a30
+R20=u20/a20
+
+r50,r30,r20=np.mean(R50),np.mean(R30),np.mean(R20)
+rpr= lambda v,i: v/i *(1+(v)/(i*4*10**6))
+rpr20,rpr30,rpr50=np.mean(rpr(u20,a20)),np.mean(rpr(u30,a30)),np.mean(rpr(u50,a50))
+print(r50,r30,r20)
+>>>>>>> b8c733b4d6aeb3ff67bdc1fe1a644963dbca83fe
 print(rpr50,rpr30,rpr20)
